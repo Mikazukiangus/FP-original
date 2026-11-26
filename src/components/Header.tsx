@@ -111,13 +111,13 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className="sticky top-0 z-40 bg-white shadow-[0_1px_3px_rgba(16,24,40,0.06)]">
       {/* Slim Top Utility Strip */}
-      <div className="bg-[#0E3578] text-white text-xs">
+      <div className="bg-[#134E4A] text-white text-xs">
         <div className="max-w-[1280px] mx-auto px-4 lg:px-6 h-8 flex items-center justify-between gap-4">
           <div className="flex items-center gap-2 truncate">
-            <Truck className="w-3.5 h-3.5 text-[#93C5FD] shrink-0" />
+            <Truck className="w-3.5 h-3.5 text-[#5EEAD4] shrink-0" />
             <span className="truncate font-medium">
               {isDigitalClub
-                ? 'Digital Club Active — Enjoy $0 delivery fee & bonus Linkpoints on your orders'
+                ? 'Lane Plus Active — Enjoy $0 delivery fee & bonus Lane Points on your orders'
                 : 'Free delivery for orders $59 & above · Weekly promotions refresh every Thursday'}
             </span>
           </div>
@@ -135,7 +135,7 @@ export const Header: React.FC<HeaderProps> = ({
               onClick={() => onNavigate('digital-club')}
               className="hover:text-white transition-colors whitespace-nowrap shrink-0"
             >
-              Digital Club
+              Lane Plus
             </button>
             <button
               type="button"
@@ -157,8 +157,8 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               type="button"
               onClick={() => onNavigate('home', null)}
-              aria-label="FairPrice Online Home"
-              className="flex items-center gap-2 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1557B0] rounded-md"
+              aria-label="Pantry Lane Online Home"
+              className="flex items-center gap-2 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F766E] rounded-md"
             >
               <svg
                 width="34"
@@ -169,14 +169,14 @@ export const Header: React.FC<HeaderProps> = ({
                 className="shrink-0"
                 aria-hidden="true"
               >
-                <rect width="36" height="36" rx="8" fill="#1557B0" />
+                <rect width="36" height="36" rx="8" fill="#0F766E" />
                 <path
                   d="M9 14.5C9 12.567 10.567 11 12.5 11H23.5C25.433 11 27 12.567 27 14.5V16H9V14.5Z"
                   fill="#FFFFFF"
                 />
                 <path
                   d="M10.5 17.5H25.5L24.1 25.2C23.85 26.55 22.67 27.5 21.3 27.5H14.7C13.33 27.5 12.15 26.55 11.9 25.2L10.5 17.5Z"
-                  fill="#E31837"
+                  fill="#EA580C"
                 />
                 <path
                   d="M14.5 11V9.5C14.5 8.12 15.62 7 17 7H19C20.38 7 21.5 8.12 21.5 9.5V11"
@@ -187,11 +187,11 @@ export const Header: React.FC<HeaderProps> = ({
               </svg>
               <div className="flex flex-col leading-none text-left">
                 <span className="text-[21px] font-extrabold tracking-tight whitespace-nowrap">
-                  <span className="text-[#0E3578]">Fair</span>
-                  <span className="text-[#E31837]">Price</span>
+                  <span className="text-[#134E4A]">Pantry </span>
+                  <span className="text-[#EA580C]">Lane</span>
                 </span>
                 <span className="text-[10px] font-semibold tracking-wider text-[#5A6270] uppercase mt-0.5">
-                  Singapore Online
+                  Demo grocery store
                 </span>
               </div>
             </button>
@@ -199,14 +199,14 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               type="button"
               onClick={onOpenDelivery}
-              className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg border border-[#DCE1E8] bg-[#F8FAFC] hover:border-[#1557B0] hover:bg-[#EFF6FF]/60 transition-colors text-left"
+              className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg border border-[#DCE1E8] bg-[#F8FAFC] hover:border-[#0F766E] hover:bg-[#F0FDFA]/60 transition-colors text-left"
             >
-              <MapPin className="w-4 h-4 text-[#E31837] shrink-0" />
+              <MapPin className="w-4 h-4 text-[#EA580C] shrink-0" />
               <div className="leading-tight">
                 <div className="text-[11px] text-[#5A6270] font-medium whitespace-nowrap">
                   Deliver to <strong className="text-[#1A1D23] tabular-nums">{postalCode}</strong>
                 </div>
-                <div className="text-xs font-semibold text-[#1557B0] truncate max-w-[140px]">
+                <div className="text-xs font-semibold text-[#0F766E] truncate max-w-[140px]">
                   {deliverySummary}
                 </div>
               </div>
@@ -224,8 +224,8 @@ export const Header: React.FC<HeaderProps> = ({
                 onFocus={() => setSearchFocused(true)}
                 onChange={(e) => onSearchChange(e.target.value)}
                 placeholder="Search for milk, eggs, rice, salmon, brands..."
-                aria-label="Search FairPrice products"
-                className="w-full h-10 pl-10 pr-20 rounded-lg border border-[#D1D5DB] bg-[#F8F9FB] focus:bg-white focus:border-[#1557B0] focus:ring-2 focus:ring-[#1557B0]/15 outline-none text-sm text-[#1A1D23] placeholder:text-[#6B7280] transition-all"
+                aria-label="Search Pantry Lane products"
+                className="w-full h-10 pl-10 pr-20 rounded-lg border border-[#D1D5DB] bg-[#F8F9FB] focus:bg-white focus:border-[#0F766E] focus:ring-2 focus:ring-[#0F766E]/15 outline-none text-sm text-[#1A1D23] placeholder:text-[#6B7280] transition-all"
               />
               {searchQuery && (
                 <button
@@ -240,7 +240,7 @@ export const Header: React.FC<HeaderProps> = ({
               <button
                 type="submit"
                 aria-label="Submit search"
-                className="absolute right-1 top-1 bottom-1 px-3 rounded-md bg-[#1557B0] hover:bg-[#0E3578] text-white text-xs font-semibold transition-colors"
+                className="absolute right-1 top-1 bottom-1 px-3 rounded-md bg-[#0F766E] hover:bg-[#134E4A] text-white text-xs font-semibold transition-colors"
               >
                 Search
               </button>
@@ -281,7 +281,7 @@ export const Header: React.FC<HeaderProps> = ({
                                   {item.brand} · {item.packSize}
                                 </div>
                               </div>
-                              <div className="text-sm font-bold text-[#1557B0] tabular-nums shrink-0">
+                              <div className="text-sm font-bold text-[#0F766E] tabular-nums shrink-0">
                                 ${item.price.toFixed(2)}
                               </div>
                             </button>
@@ -293,7 +293,7 @@ export const Header: React.FC<HeaderProps> = ({
                             setSearchFocused(false);
                             onSearchSubmit(searchQuery);
                           }}
-                          className="w-full mt-2 pt-2 border-t border-[#EEF0F3] text-xs font-semibold text-[#1557B0] hover:underline text-center py-1.5"
+                          className="w-full mt-2 pt-2 border-t border-[#EEF0F3] text-xs font-semibold text-[#0F766E] hover:underline text-center py-1.5"
                         >
                           View all results for “{searchQuery}”
                         </button>
@@ -307,7 +307,7 @@ export const Header: React.FC<HeaderProps> = ({
                 ) : (
                   <div className="p-4">
                     <div className="text-xs font-semibold text-[#5A6270] mb-2.5">
-                      Popular Searches on FairPrice
+                      Popular Searches on Pantry Lane
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {TRENDING_SEARCHES.map((term) => (
@@ -319,7 +319,7 @@ export const Header: React.FC<HeaderProps> = ({
                             setSearchFocused(false);
                             onSearchSubmit(term);
                           }}
-                          className="px-3 py-1.5 rounded-md bg-[#F3F5F8] hover:bg-[#E7EFFB] text-xs font-medium text-[#1A1D23] hover:text-[#1557B0] transition-colors"
+                          className="px-3 py-1.5 rounded-md bg-[#F3F5F8] hover:bg-[#E3F7F3] text-xs font-medium text-[#1A1D23] hover:text-[#0F766E] transition-colors"
                         >
                           {term}
                         </button>
@@ -338,7 +338,7 @@ export const Header: React.FC<HeaderProps> = ({
               onClick={onOpenAccount}
               className="hidden md:flex items-center gap-2 px-2.5 py-2 rounded-lg hover:bg-[#F3F5F8] transition-colors text-left"
             >
-              <div className="w-8 h-8 rounded-full bg-[#EBF3FE] text-[#1557B0] flex items-center justify-center shrink-0">
+              <div className="w-8 h-8 rounded-full bg-[#E6FAF6] text-[#0F766E] flex items-center justify-center shrink-0">
                 <User className="w-4 h-4" />
               </div>
               <div className="leading-tight">
@@ -346,7 +346,7 @@ export const Header: React.FC<HeaderProps> = ({
                   {isSignedIn ? 'Alex Tan' : 'Sign In / Join'}
                 </div>
                 <div className="text-[11px] font-medium text-[#5A6270] tabular-nums whitespace-nowrap">
-                  {isSignedIn ? `${linkpoints.toLocaleString()} Linkpoints` : 'Earn Linkpoints'}
+                  {isSignedIn ? `${linkpoints.toLocaleString()} Lane Points` : 'Earn Lane Points'}
                 </div>
               </div>
             </button>
@@ -357,13 +357,13 @@ export const Header: React.FC<HeaderProps> = ({
               aria-label="Shopping List"
               className={`relative flex items-center justify-center w-10 h-10 rounded-lg border transition-colors ${
                 activePage === 'wishlist'
-                  ? 'border-[#1557B0] bg-[#EBF3FE] text-[#1557B0]'
-                  : 'border-[#E2E6EC] text-[#374151] hover:border-[#1557B0] hover:text-[#1557B0]'
+                  ? 'border-[#0F766E] bg-[#E6FAF6] text-[#0F766E]'
+                  : 'border-[#E2E6EC] text-[#374151] hover:border-[#0F766E] hover:text-[#0F766E]'
               }`}
             >
               <Heart className="w-4 h-4" />
               {wishlistCount > 0 && (
-                <span className="absolute -top-1.5 -right-1.5 min-w-[18px] h-[18px] px-1 rounded-full bg-[#E31837] text-white text-[10px] font-bold flex items-center justify-center tabular-nums">
+                <span className="absolute -top-1.5 -right-1.5 min-w-[18px] h-[18px] px-1 rounded-full bg-[#EA580C] text-white text-[10px] font-bold flex items-center justify-center tabular-nums">
                   {wishlistCount}
                 </span>
               )}
@@ -373,12 +373,12 @@ export const Header: React.FC<HeaderProps> = ({
               type="button"
               onClick={onOpenCart}
               aria-label="Open Shopping Cart"
-              className="flex items-center gap-2.5 h-10 px-3.5 rounded-lg bg-[#1557B0] hover:bg-[#0E3578] text-white transition-colors shrink-0"
+              className="flex items-center gap-2.5 h-10 px-3.5 rounded-lg bg-[#0F766E] hover:bg-[#134E4A] text-white transition-colors shrink-0"
             >
               <div className="relative">
                 <ShoppingCart className="w-4 h-4" />
                 {cartCount > 0 && (
-                  <span className="absolute -top-2 -right-2 min-w-[17px] h-[17px] px-1 rounded-full bg-[#E31837] text-white text-[10px] font-bold flex items-center justify-center tabular-nums">
+                  <span className="absolute -top-2 -right-2 min-w-[17px] h-[17px] px-1 rounded-full bg-[#EA580C] text-white text-[10px] font-bold flex items-center justify-center tabular-nums">
                     {cartCount}
                   </span>
                 )}
@@ -400,8 +400,8 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={() => setMegaMenuOpen((prev) => !prev)}
             className={`flex items-center gap-2 h-8 px-3 rounded-md text-sm font-bold transition-colors whitespace-nowrap shrink-0 ${
               megaMenuOpen
-                ? 'bg-[#1557B0] text-white'
-                : 'bg-[#F0F5FC] text-[#0E3578] hover:bg-[#E1ECFA]'
+                ? 'bg-[#0F766E] text-white'
+                : 'bg-[#F0FAF8] text-[#134E4A] hover:bg-[#D5F5EE]'
             }`}
           >
             <LayoutGrid className="w-4 h-4" />
@@ -422,8 +422,8 @@ export const Header: React.FC<HeaderProps> = ({
               }}
               className={`py-2.5 border-b-2 transition-colors whitespace-nowrap shrink-0 ${
                 activePage === 'promotions'
-                  ? 'border-[#1557B0] text-[#1557B0]'
-                  : 'border-transparent hover:text-[#1557B0]'
+                  ? 'border-[#0F766E] text-[#0F766E]'
+                  : 'border-transparent hover:text-[#0F766E]'
               }`}
             >
               Promotions
@@ -436,11 +436,11 @@ export const Header: React.FC<HeaderProps> = ({
               }}
               className={`py-2.5 border-b-2 transition-colors whitespace-nowrap shrink-0 ${
                 activePage === 'must-buy'
-                  ? 'border-[#E31837] text-[#E31837]'
-                  : 'border-transparent text-[#C8102E] hover:text-[#E31837]'
+                  ? 'border-[#EA580C] text-[#EA580C]'
+                  : 'border-transparent text-[#C2410C] hover:text-[#EA580C]'
               }`}
             >
-              Must Buy
+              Top Picks
             </button>
             <button
               type="button"
@@ -450,8 +450,8 @@ export const Header: React.FC<HeaderProps> = ({
               }}
               className={`py-2.5 border-b-2 transition-colors whitespace-nowrap shrink-0 ${
                 activePage === 'weekly-ads'
-                  ? 'border-[#1557B0] text-[#1557B0]'
-                  : 'border-transparent hover:text-[#1557B0]'
+                  ? 'border-[#0F766E] text-[#0F766E]'
+                  : 'border-transparent hover:text-[#0F766E]'
               }`}
             >
               Weekly Ads
@@ -464,8 +464,8 @@ export const Header: React.FC<HeaderProps> = ({
               }}
               className={`py-2.5 border-b-2 transition-colors whitespace-nowrap shrink-0 ${
                 activePage === 'price-drop'
-                  ? 'border-[#1557B0] text-[#1557B0]'
-                  : 'border-transparent hover:text-[#1557B0]'
+                  ? 'border-[#0F766E] text-[#0F766E]'
+                  : 'border-transparent hover:text-[#0F766E]'
               }`}
             >
               Price Drop Buy Now
@@ -478,8 +478,8 @@ export const Header: React.FC<HeaderProps> = ({
               }}
               className={`py-2.5 border-b-2 transition-colors whitespace-nowrap shrink-0 ${
                 activePage === 'recipes'
-                  ? 'border-[#1557B0] text-[#1557B0]'
-                  : 'border-transparent hover:text-[#1557B0]'
+                  ? 'border-[#0F766E] text-[#0F766E]'
+                  : 'border-transparent hover:text-[#0F766E]'
               }`}
             >
               Recipes
@@ -492,11 +492,11 @@ export const Header: React.FC<HeaderProps> = ({
               }}
               className={`py-2.5 border-b-2 transition-colors whitespace-nowrap shrink-0 ${
                 activePage === 'digital-club'
-                  ? 'border-[#1557B0] text-[#1557B0]'
-                  : 'border-transparent hover:text-[#1557B0]'
+                  ? 'border-[#0F766E] text-[#0F766E]'
+                  : 'border-transparent hover:text-[#0F766E]'
               }`}
             >
-              Digital Club
+              Lane Plus
             </button>
           </nav>
         </div>
@@ -517,7 +517,7 @@ export const Header: React.FC<HeaderProps> = ({
                     }}
                     className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium transition-colors text-left ${
                       hoveredCatId === cat.id || activeCategory === cat.id
-                        ? 'bg-[#EFF6FF] text-[#1557B0] font-semibold'
+                        ? 'bg-[#F0FDFA] text-[#0F766E] font-semibold'
                         : 'text-[#374151] hover:bg-[#F8FAFC]'
                     }`}
                   >
@@ -537,7 +537,7 @@ export const Header: React.FC<HeaderProps> = ({
                         setMegaMenuOpen(false);
                         onNavigate('category', activeHoveredCat.id);
                       }}
-                      className="text-xs font-semibold text-[#1557B0] hover:underline"
+                      className="text-xs font-semibold text-[#0F766E] hover:underline"
                     >
                       View all in {activeHoveredCat.shortName}
                     </button>
@@ -552,7 +552,7 @@ export const Header: React.FC<HeaderProps> = ({
                           setMegaMenuOpen(false);
                           onNavigate('category', activeHoveredCat.id);
                         }}
-                        className="text-left px-3 py-2 rounded-lg text-sm text-[#374151] hover:bg-[#F5F8FC] hover:text-[#1557B0] transition-colors"
+                        className="text-left px-3 py-2 rounded-lg text-sm text-[#374151] hover:bg-[#F5F8FC] hover:text-[#0F766E] transition-colors"
                       >
                         {sub}
                       </button>
@@ -576,7 +576,7 @@ export const Header: React.FC<HeaderProps> = ({
                             setMegaMenuOpen(false);
                             onSelectProduct(item);
                           }}
-                          className="flex items-center gap-3 p-2 bg-white rounded-lg border border-[#E6E8EC] hover:border-[#1557B0] transition-colors text-left"
+                          className="flex items-center gap-3 p-2 bg-white rounded-lg border border-[#E6E8EC] hover:border-[#0F766E] transition-colors text-left"
                         >
                           <img
                             src={item.image}
@@ -588,7 +588,7 @@ export const Header: React.FC<HeaderProps> = ({
                             <div className="text-xs font-semibold text-[#1A1D23] truncate">
                               {item.name}
                             </div>
-                            <div className="text-xs font-bold text-[#1557B0] tabular-nums mt-0.5">
+                            <div className="text-xs font-bold text-[#0F766E] tabular-nums mt-0.5">
                               ${item.price.toFixed(2)}
                               {item.originalPrice && (
                                 <span className="text-[11px] font-normal text-[#8A94A6] line-through ml-1.5">

@@ -29,17 +29,17 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       : null;
 
   return (
-    <article className="group bg-white rounded-xl border border-[#E5E8EE] hover:border-[#BFD3F2] hover:shadow-[0_6px_20px_rgba(14,53,120,0.08)] transition-all duration-150 flex flex-col overflow-hidden">
+    <article className="group bg-white rounded-xl border border-[#E5E8EE] hover:border-[#99E6D8] hover:shadow-[0_6px_20px_rgba(14,53,120,0.08)] transition-all duration-150 flex flex-col overflow-hidden">
       {/* Top Action & Promo Row */}
       <div className="px-3 pt-3 flex items-start justify-between gap-2 min-h-[30px]">
         {product.promoTag ? (
           <span
             className={`text-[11px] font-bold tracking-tight leading-none py-1 px-2 rounded ${
               product.promoType === 'must-buy' || product.promoType === 'price-drop'
-                ? 'bg-[#E31837] text-white'
+                ? 'bg-[#EA580C] text-white'
                 : product.promoType === 'everyday-low'
-                ? 'bg-[#0E3578] text-white'
-                : 'bg-[#FFF0F2] text-[#C8102E]'
+                ? 'bg-[#134E4A] text-white'
+                : 'bg-[#FFF4EC] text-[#C2410C]'
             }`}
           >
             {product.promoTag}
@@ -57,8 +57,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           aria-label={isWishlisted ? `Remove ${product.name} from shopping list` : `Save ${product.name} to shopping list`}
           className={`w-7 h-7 rounded-full flex items-center justify-center transition-colors shrink-0 ${
             isWishlisted
-              ? 'text-[#E31837] bg-[#FFF0F2]'
-              : 'text-[#8A94A6] hover:text-[#E31837] hover:bg-[#F5F6F8]'
+              ? 'text-[#EA580C] bg-[#FFF4EC]'
+              : 'text-[#8A94A6] hover:text-[#EA580C] hover:bg-[#F5F6F8]'
           }`}
         >
           <Heart className={`w-4 h-4 ${isWishlisted ? 'fill-current' : ''}`} />
@@ -100,7 +100,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             </span>
           )}
           {savings && (
-            <span className="text-[11px] font-semibold text-[#C8102E] tabular-nums">
+            <span className="text-[11px] font-semibold text-[#C2410C] tabular-nums">
               Save ${savings}
             </span>
           )}
@@ -109,7 +109,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         {/* Bundle Promo Line */}
         <div className="min-h-[18px] mt-0.5">
           {product.bundle ? (
-            <span className="text-[11px] font-bold text-[#1557B0]">
+            <span className="text-[11px] font-bold text-[#0F766E]">
               {product.bundle.label}
             </span>
           ) : (
@@ -123,7 +123,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         <button
           type="button"
           onClick={() => onOpenDetail(product)}
-          className="text-left mt-1.5 text-[13.5px] font-semibold text-[#1A1D23] hover:text-[#1557B0] leading-snug line-clamp-2 min-h-[38px] transition-colors"
+          className="text-left mt-1.5 text-[13.5px] font-semibold text-[#1A1D23] hover:text-[#0F766E] leading-snug line-clamp-2 min-h-[38px] transition-colors"
         >
           {product.name}
         </button>
@@ -147,28 +147,28 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             <button
               type="button"
               onClick={() => onAdd(product)}
-              className="w-full h-9 rounded-lg bg-[#1557B0] hover:bg-[#0E3578] active:scale-[0.99] text-white text-xs font-bold transition-all whitespace-nowrap"
+              className="w-full h-9 rounded-lg bg-[#0F766E] hover:bg-[#134E4A] active:scale-[0.99] text-white text-xs font-bold transition-all whitespace-nowrap"
             >
               Add to cart
             </button>
           ) : (
-            <div className="w-full h-9 rounded-lg border-2 border-[#1557B0] bg-[#EFF6FF] flex items-center justify-between overflow-hidden">
+            <div className="w-full h-9 rounded-lg border-2 border-[#0F766E] bg-[#F0FDFA] flex items-center justify-between overflow-hidden">
               <button
                 type="button"
                 onClick={() => onUpdateQty(product.id, -1)}
                 aria-label={`Decrease quantity of ${product.name}`}
-                className="w-9 h-full flex items-center justify-center text-[#1557B0] hover:bg-[#DCEAFE] transition-colors"
+                className="w-9 h-full flex items-center justify-center text-[#0F766E] hover:bg-[#CCFBF1] transition-colors"
               >
                 <Minus className="w-3.5 h-3.5 stroke-[2.5]" />
               </button>
-              <span className="text-sm font-extrabold text-[#0E3578] tabular-nums">
+              <span className="text-sm font-extrabold text-[#134E4A] tabular-nums">
                 {quantity}
               </span>
               <button
                 type="button"
                 onClick={() => onUpdateQty(product.id, 1)}
                 aria-label={`Increase quantity of ${product.name}`}
-                className="w-9 h-full flex items-center justify-center text-[#1557B0] hover:bg-[#DCEAFE] transition-colors"
+                className="w-9 h-full flex items-center justify-center text-[#0F766E] hover:bg-[#CCFBF1] transition-colors"
               >
                 <Plus className="w-3.5 h-3.5 stroke-[2.5]" />
               </button>

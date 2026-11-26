@@ -124,7 +124,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
       : mode === 'search'
       ? `Search Results for “${searchQuery}”`
       : mode === 'must-buy'
-      ? 'Must Buy This Week'
+      ? 'Top Picks This Week'
       : mode === 'price-drop'
       ? 'Price Drop Buy Now'
       : mode === 'wishlist'
@@ -138,7 +138,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
         <button
           type="button"
           onClick={() => onNavigate('home', null)}
-          className="flex items-center gap-1 hover:text-[#1557B0] font-medium"
+          className="flex items-center gap-1 hover:text-[#0F766E] font-medium"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Home</span>
@@ -153,7 +153,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
           <div className="bg-white rounded-xl border border-[#E5E8EE] p-4 space-y-5">
             <div className="flex items-center justify-between">
               <h2 className="text-sm font-extrabold text-[#1A1D23] flex items-center gap-2">
-                <SlidersHorizontal className="w-4 h-4 text-[#1557B0]" />
+                <SlidersHorizontal className="w-4 h-4 text-[#0F766E]" />
                 <span>Filter Products</span>
               </h2>
               {(selectedDietary.length > 0 || promoOnly || selectedBrand !== 'ALL') && (
@@ -164,7 +164,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
                     setPromoOnly(false);
                     setSelectedBrand('ALL');
                   }}
-                  className="text-xs font-semibold text-[#1557B0] hover:underline"
+                  className="text-xs font-semibold text-[#0F766E] hover:underline"
                 >
                   Reset
                 </button>
@@ -184,7 +184,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
                     onClick={() => onNavigate('category', cat.id)}
                     className={`w-full text-left px-2.5 py-1.5 rounded-lg text-xs font-medium transition-colors ${
                       categoryId === cat.id && mode === 'category'
-                        ? 'bg-[#EFF6FF] text-[#1557B0] font-bold'
+                        ? 'bg-[#F0FDFA] text-[#0F766E] font-bold'
                         : 'text-[#374151] hover:bg-[#F5F7FA]'
                     }`}
                   >
@@ -206,7 +206,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
                       type="checkbox"
                       checked={selectedDietary.includes(tag)}
                       onChange={() => toggleDietary(tag)}
-                      className="w-3.5 h-3.5 accent-[#1557B0]"
+                      className="w-3.5 h-3.5 accent-[#0F766E]"
                     />
                     <span>{tag}</span>
                   </label>
@@ -222,7 +222,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
                   type="checkbox"
                   checked={promoOnly}
                   onChange={(e) => setPromoOnly(e.target.checked)}
-                  className="w-4 h-4 accent-[#1557B0]"
+                  className="w-4 h-4 accent-[#0F766E]"
                 />
               </label>
             </div>
@@ -236,7 +236,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
                 <select
                   value={selectedBrand}
                   onChange={(e) => setSelectedBrand(e.target.value)}
-                  className="w-full h-9 px-2.5 rounded-lg border border-[#D1D5DB] text-xs bg-white outline-none focus:border-[#1557B0]"
+                  className="w-full h-9 px-2.5 rounded-lg border border-[#D1D5DB] text-xs bg-white outline-none focus:border-[#0F766E]"
                 >
                   <option value="ALL">All Brands</option>
                   {brands.map((b) => (
@@ -268,7 +268,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
                 id="sort-select"
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as typeof sortBy)}
-                className="h-9 px-2.5 rounded-lg border border-[#D1D5DB] text-xs font-semibold text-[#1A1D23] bg-white outline-none focus:border-[#1557B0]"
+                className="h-9 px-2.5 rounded-lg border border-[#D1D5DB] text-xs font-semibold text-[#1A1D23] bg-white outline-none focus:border-[#0F766E]"
               >
                 <option value="relevance">Relevance</option>
                 <option value="price-asc">Price: Low to High</option>
@@ -291,7 +291,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
               <button
                 type="button"
                 onClick={() => onNavigate('home', null)}
-                className="mt-4 px-5 py-2.5 rounded-lg bg-[#1557B0] hover:bg-[#0E3578] text-white text-xs font-bold"
+                className="mt-4 px-5 py-2.5 rounded-lg bg-[#0F766E] hover:bg-[#134E4A] text-white text-xs font-bold"
               >
                 Back to Homepage
               </button>
@@ -331,7 +331,7 @@ export const WeeklyAdsView: React.FC<CommonViewProps> = ({
   const [tab, setTab] = useState<'must-buy' | 'weekly-savers' | 'fresh-buys' | '4-day-specials'>('must-buy');
 
   const tabs = [
-    { id: 'must-buy', label: 'Must Buy', desc: 'Hero weekly discounts across family essentials' },
+    { id: 'must-buy', label: 'Top Picks', desc: 'Hero weekly discounts across family essentials' },
     { id: 'weekly-savers', label: 'Weekly Savers', desc: 'Multi-buy bundles & everyday household value' },
     { id: 'fresh-buys', label: 'Fresh Buys', desc: 'Farm-fresh fruits, vegetables & chilled eggs' },
     { id: '4-day-specials', label: '4-Day Specials', desc: 'Limited Thursday – Sunday price cuts' },
@@ -346,7 +346,7 @@ export const WeeklyAdsView: React.FC<CommonViewProps> = ({
         <button
           type="button"
           onClick={() => onNavigate('home', null)}
-          className="flex items-center gap-1 hover:text-[#1557B0] font-medium"
+          className="flex items-center gap-1 hover:text-[#0F766E] font-medium"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Home</span>
@@ -355,16 +355,16 @@ export const WeeklyAdsView: React.FC<CommonViewProps> = ({
         <span className="font-semibold text-[#1A1D23]">Weekly Ads &amp; Digital Catalogue</span>
       </div>
 
-      <div className="bg-gradient-to-r from-[#0E3578] to-[#1557B0] rounded-2xl p-6 lg:p-8 text-white mb-6">
-        <div className="flex items-center gap-2 text-xs font-semibold text-[#BFDBFE]">
+      <div className="bg-gradient-to-r from-[#134E4A] to-[#0F766E] rounded-2xl p-6 lg:p-8 text-white mb-6">
+        <div className="flex items-center gap-2 text-xs font-semibold text-[#99F6E4]">
           <Tag className="w-4 h-4" />
           <span>Valid Thursday – Wednesday · In-Store &amp; Online</span>
         </div>
         <h1 className="text-2xl lg:text-3xl font-extrabold mt-2">
-          FairPrice Weekly Promotions Catalogue
+          Pantry Lane Weekly Promotions Catalogue
         </h1>
         <p className="text-sm text-white/85 mt-1.5 max-w-2xl">
-          Browse this week’s Must Buy deals, Fresh Buys, Weekly Savers, and 4-Day Neighbourhood Specials. Add items directly to your delivery trolley.
+          Browse this week’s Top Picks deals, Fresh Buys, Weekly Savers, and 4-Day Neighbourhood Specials. Add items directly to your delivery trolley.
         </p>
 
         <div className="flex flex-wrap gap-2 mt-5">
@@ -375,7 +375,7 @@ export const WeeklyAdsView: React.FC<CommonViewProps> = ({
               onClick={() => setTab(t.id)}
               className={`px-4 py-2 rounded-lg text-xs font-bold transition-colors whitespace-nowrap ${
                 tab === t.id
-                  ? 'bg-white text-[#0E3578]'
+                  ? 'bg-white text-[#134E4A]'
                   : 'bg-white/15 text-white hover:bg-white/25'
               }`}
             >
@@ -431,7 +431,7 @@ export const RecipesView: React.FC<RecipesViewProps> = ({
         <button
           type="button"
           onClick={() => onNavigate('home', null)}
-          className="flex items-center gap-1 hover:text-[#1557B0] font-medium"
+          className="flex items-center gap-1 hover:text-[#0F766E] font-medium"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Home</span>
@@ -442,11 +442,11 @@ export const RecipesView: React.FC<RecipesViewProps> = ({
 
       <div className="mb-6">
         <h1 className="text-2xl font-extrabold text-[#1A1D23] flex items-center gap-2.5">
-          <ChefHat className="w-6 h-6 text-[#E31837]" />
+          <ChefHat className="w-6 h-6 text-[#EA580C]" />
           <span>Singapore Home Cooking Recipes</span>
         </h1>
         <p className="text-sm text-[#5A6270] mt-1">
-          Shop every fresh ingredient straight into your FairPrice cart in one click.
+          Shop every fresh ingredient straight into your Pantry Lane cart in one click.
         </p>
       </div>
 
@@ -501,7 +501,7 @@ export const RecipesView: React.FC<RecipesViewProps> = ({
                       key={item.id}
                       type="button"
                       onClick={() => onOpenDetail(item)}
-                      className="w-full flex items-center justify-between gap-2 text-xs hover:text-[#1557B0] text-left"
+                      className="w-full flex items-center justify-between gap-2 text-xs hover:text-[#0F766E] text-left"
                     >
                       <span className="truncate text-[#374151]">{item.name}</span>
                       <span className="font-bold text-[#1A1D23] tabular-nums shrink-0">
@@ -516,7 +516,7 @@ export const RecipesView: React.FC<RecipesViewProps> = ({
                   onClick={() => onAddMultiple(recipe.productIds)}
                   className="mt-auto pt-4"
                 >
-                  <span className="w-full h-10 rounded-lg bg-[#1557B0] hover:bg-[#0E3578] text-white text-xs font-bold flex items-center justify-center gap-2 transition-colors">
+                  <span className="w-full h-10 rounded-lg bg-[#0F766E] hover:bg-[#134E4A] text-white text-xs font-bold flex items-center justify-center gap-2 transition-colors">
                     <ShoppingCart className="w-4 h-4" />
                     <span>Add All Ingredients (${bundleTotal.toFixed(2)})</span>
                   </span>
@@ -548,25 +548,25 @@ export const DigitalClubView: React.FC<DigitalClubViewProps> = ({
         <button
           type="button"
           onClick={() => onNavigate('home', null)}
-          className="flex items-center gap-1 hover:text-[#1557B0] font-medium"
+          className="flex items-center gap-1 hover:text-[#0F766E] font-medium"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Home</span>
         </button>
         <span aria-hidden="true">/</span>
-        <span className="font-semibold text-[#1A1D23]">Digital Club &amp; Link Rewards</span>
+        <span className="font-semibold text-[#1A1D23]">Lane Plus &amp; Lane Rewards</span>
       </div>
 
-      <div className="bg-gradient-to-br from-[#0E3578] via-[#1557B0] to-[#1D4ED8] rounded-2xl p-8 lg:p-10 text-white grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div className="bg-gradient-to-br from-[#134E4A] via-[#0F766E] to-[#0F766E] rounded-2xl p-8 lg:p-10 text-white grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         <div className="lg:col-span-7">
-          <div className="text-xs font-bold uppercase tracking-wider text-[#93C5FD]">
-            FairPrice Digital Club
+          <div className="text-xs font-bold uppercase tracking-wider text-[#5EEAD4]">
+            Pantry Lane Lane Plus
           </div>
           <h1 className="text-3xl lg:text-4xl font-extrabold mt-2 leading-tight">
-            Unlimited $0 Delivery &amp; 2x Linkpoints Every Month
+            Unlimited $0 Delivery &amp; 2x Lane Points Every Month
           </h1>
           <p className="text-sm text-white/85 mt-3 max-w-xl leading-relaxed">
-            Save more every time you shop groceries online. Enjoy free delivery on all orders with no minimum spend, bonus Linkpoints, and member-only monthly vouchers from $9.99/month.
+            Save more every time you shop groceries online. Enjoy free delivery on all orders with no minimum spend, bonus Lane Points, and member-only monthly vouchers from $9.99/month.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -576,10 +576,10 @@ export const DigitalClubView: React.FC<DigitalClubViewProps> = ({
               className={`px-6 py-3 rounded-lg text-sm font-bold transition-colors ${
                 isDigitalClub
                   ? 'bg-[#ECFDF3] text-[#15803D]'
-                  : 'bg-[#E31837] hover:bg-[#C8102E] text-white'
+                  : 'bg-[#EA580C] hover:bg-[#C2410C] text-white'
               }`}
             >
-              {isDigitalClub ? 'Digital Club Active (Click to Manage)' : 'Start 30-Day Free Trial'}
+              {isDigitalClub ? 'Lane Plus Active (Click to Manage)' : 'Start 30-Day Free Trial'}
             </button>
             <button
               type="button"
@@ -596,11 +596,11 @@ export const DigitalClubView: React.FC<DigitalClubViewProps> = ({
           <ul className="space-y-3 text-sm">
             {[
               { icon: Truck, title: '$0 Delivery Fee', sub: 'Unlimited free delivery on every grocery order' },
-              { icon: Award, title: '2x Bonus Linkpoints', sub: 'Earn double Linkpoints on FairPrice Online' },
+              { icon: Award, title: '2x Bonus Lane Points', sub: 'Earn double Lane Points on Pantry Lane Online' },
               { icon: Sparkles, title: 'Exclusive Monthly Vouchers', sub: 'Up to $24 in bonus monthly store & online vouchers' },
             ].map((perk) => (
               <li key={perk.title} className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-lg bg-[#EFF6FF] text-[#1557B0] flex items-center justify-center shrink-0">
+                <div className="w-8 h-8 rounded-lg bg-[#F0FDFA] text-[#0F766E] flex items-center justify-center shrink-0">
                   <perk.icon className="w-4 h-4" />
                 </div>
                 <div>

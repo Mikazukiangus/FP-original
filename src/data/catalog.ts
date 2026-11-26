@@ -66,7 +66,7 @@ export interface RecipeItem {
 export interface StoreOutlet {
   id: string;
   name: string;
-  format: 'FairPrice Xtra' | 'FairPrice Finest' | 'FairPrice' | 'FairPrice Express';
+  format: 'Pantry Lane Superstore' | 'Pantry Lane Select' | 'Pantry Lane' | 'Pantry Lane Express';
   address: string;
   postalCode: string;
   hours: string;
@@ -115,8 +115,8 @@ export const CATEGORIES: Category[] = [
     name: 'Dairy, Chilled & Eggs',
     shortName: 'Dairy & Eggs',
     subcategories: ['Fresh Milk', 'Eggs', 'Yoghurt & Probiotics', 'Butter & Cheese', 'Tofu & Chilled Foods'],
-    accentBg: 'bg-[#EFF6FF]',
-    accentText: 'text-[#1D4ED8]',
+    accentBg: 'bg-[#F0FDFA]',
+    accentText: 'text-[#0F766E]',
     iconKey: 'milk',
   },
   {
@@ -193,7 +193,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     title: 'Fresh Market Picks Delivered to Your Door',
     subtitle:
       'Save up to 35% on crisp fruits, chilled dairy, Norwegian salmon, and everyday staples. Free delivery on orders $59 & above.',
-    ctaLabel: 'Shop Must Buy Deals',
+    ctaLabel: 'Shop Top Picks Deals',
     targetView: 'must-buy',
     image: IMAGES.heroFresh,
     theme: 'blue',
@@ -482,8 +482,8 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'fp-tissue-10s',
-    name: 'FairPrice Soft 3-Ply Bathroom Tissue Rolls',
-    brand: 'FairPrice',
+    name: 'Pantry Lane Soft 3-Ply Bathroom Tissue Rolls',
+    brand: 'Pantry Lane',
     category: 'household',
     subcategory: 'Paper & Bathroom Tissue',
     price: 5.95,
@@ -507,8 +507,8 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'fp-milk-lowfat',
-    name: 'FairPrice Fresh Low Fat Milk',
-    brand: 'FairPrice',
+    name: 'Pantry Lane Fresh Low Fat Milk',
+    brand: 'Pantry Lane',
     category: 'dairy-chilled-eggs',
     subcategory: 'Fresh Milk',
     price: 4.95,
@@ -523,7 +523,7 @@ export const PRODUCTS: Product[] = [
     rating: 4.7,
     reviewCount: 840,
     description:
-      'High-calcium, low-fat Australian pasteurised milk with clean creamy flavour at FairPrice Housebrand everyday value.',
+      'High-calcium, low-fat Australian pasteurised milk with clean creamy flavour at Pantry Lane house brand everyday value.',
     storageInfo: 'Keep refrigerated between 2°C and 4°C.',
     inStock: true,
     weeklyAdGroup: 'weekly-savers',
@@ -553,8 +553,8 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'fp-rice-fp-5kg',
-    name: 'FairPrice Thai Hom Mali Superior Fragrant Rice',
-    brand: 'FairPrice',
+    name: 'Pantry Lane Thai Hom Mali Superior Fragrant Rice',
+    brand: 'Pantry Lane',
     category: 'rice-noodles-cooking',
     subcategory: 'Fragrant Rice',
     price: 12.90,
@@ -569,7 +569,7 @@ export const PRODUCTS: Product[] = [
     rating: 4.8,
     reviewCount: 1340,
     description:
-      'Everyday favourite Thai fragrant jasmine rice with soft, fluffy cooked grains and trusted FairPrice quality guarantee.',
+      'Everyday favourite Thai fragrant jasmine rice with soft, fluffy cooked grains and trusted Pantry Lane quality guarantee.',
     storageInfo: 'Keep sealed in a cool dry pantry.',
     inStock: true,
     weeklyAdGroup: 'weekly-savers',
@@ -720,8 +720,8 @@ export const DELIVERY_SLOTS: DeliverySlot[] = [
 export const STORE_OUTLETS: StoreOutlet[] = [
   {
     id: 'st-vivo',
-    name: 'FairPrice Xtra @ VivoCity',
-    format: 'FairPrice Xtra',
+    name: 'Pantry Lane Superstore @ VivoCity',
+    format: 'Pantry Lane Superstore',
     address: '1 HarbourFront Walk, #B2-23 VivoCity',
     postalCode: '098585',
     hours: '8:00 AM – 11:00 PM Daily',
@@ -730,8 +730,8 @@ export const STORE_OUTLETS: StoreOutlet[] = [
   },
   {
     id: 'st-tripleone',
-    name: 'FairPrice Finest @ 111 Somerset',
-    format: 'FairPrice Finest',
+    name: 'Pantry Lane Select @ 111 Somerset',
+    format: 'Pantry Lane Select',
     address: '111 Somerset Road, #01-01 TripleOne Somerset',
     postalCode: '238164',
     hours: '8:00 AM – 11:00 PM Daily',
@@ -740,8 +740,8 @@ export const STORE_OUTLETS: StoreOutlet[] = [
   },
   {
     id: 'st-amk',
-    name: 'FairPrice Xtra @ AMK Hub',
-    format: 'FairPrice Xtra',
+    name: 'Pantry Lane Superstore @ AMK Hub',
+    format: 'Pantry Lane Superstore',
     address: '53 Ang Mo Kio Ave 3, #B2-40 AMK Hub',
     postalCode: '569933',
     hours: 'Open 24 Hours',
@@ -750,8 +750,8 @@ export const STORE_OUTLETS: StoreOutlet[] = [
   },
   {
     id: 'st-jem',
-    name: 'FairPrice Xtra @ Jem',
-    format: 'FairPrice Xtra',
+    name: 'Pantry Lane Superstore @ Jem',
+    format: 'Pantry Lane Superstore',
     address: '50 Jurong Gateway Road, #B1-21 Jem',
     postalCode: '608549',
     hours: '8:00 AM – 11:00 PM Daily',
@@ -760,8 +760,8 @@ export const STORE_OUTLETS: StoreOutlet[] = [
   },
   {
     id: 'st-tampines',
-    name: 'FairPrice @ Tampines Mall',
-    format: 'FairPrice',
+    name: 'Pantry Lane @ Tampines Mall',
+    format: 'Pantry Lane',
     address: '4 Tampines Central 5, #B1-12 Tampines Mall',
     postalCode: '529510',
     hours: '8:00 AM – 10:30 PM Daily',

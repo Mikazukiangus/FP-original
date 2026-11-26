@@ -134,7 +134,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
         {/* Header */}
         <div className="px-5 py-4 border-b border-[#E6E8EC] flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <ShoppingCart className="w-5 h-5 text-[#1557B0]" />
+            <ShoppingCart className="w-5 h-5 text-[#0F766E]" />
             <h2 className="text-base font-bold text-[#1A1D23]">
               My Cart ({cartEntries.reduce((acc, e) => acc + e.qty, 0)})
             </h2>
@@ -144,7 +144,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
               <button
                 type="button"
                 onClick={onClearCart}
-                className="text-xs font-medium text-[#5A6270] hover:text-[#E31837] transition-colors px-2 py-1"
+                className="text-xs font-medium text-[#5A6270] hover:text-[#EA580C] transition-colors px-2 py-1"
               >
                 Clear all
               </button>
@@ -163,7 +163,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
         {/* Delivery Slot Banner */}
         <div className="px-5 py-3 bg-[#F8FAFC] border-b border-[#E6E8EC] flex items-center justify-between gap-2">
           <div className="flex items-center gap-2 text-xs text-[#374151] min-w-0">
-            <MapPin className="w-4 h-4 text-[#E31837] shrink-0" />
+            <MapPin className="w-4 h-4 text-[#EA580C] shrink-0" />
             <div className="truncate">
               <span className="font-semibold text-[#1A1D23] tabular-nums">Singapore {postalCode}</span>
               <span className="mx-1.5 text-[#9CA3AF]">·</span>
@@ -173,7 +173,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
           <button
             type="button"
             onClick={onOpenDelivery}
-            className="text-xs font-bold text-[#1557B0] hover:underline shrink-0"
+            className="text-xs font-bold text-[#0F766E] hover:underline shrink-0"
           >
             Change
           </button>
@@ -181,7 +181,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
 
         {/* Free Delivery Progress Bar */}
         {cartEntries.length > 0 && (
-          <div className="px-5 py-3 bg-[#EFF6FF] border-b border-[#DCEAFE]">
+          <div className="px-5 py-3 bg-[#F0FDFA] border-b border-[#CCFBF1]">
             <div className="flex items-center justify-between text-xs font-semibold mb-1.5">
               {freeDeliveryUnlocked ? (
                 <span className="text-[#15803D] flex items-center gap-1.5">
@@ -189,7 +189,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                   <span>You have unlocked FREE delivery!</span>
                 </span>
               ) : (
-                <span className="text-[#0E3578] flex items-center gap-1.5">
+                <span className="text-[#134E4A] flex items-center gap-1.5">
                   <Truck className="w-4 h-4 shrink-0" />
                   <span>
                     Add <strong className="tabular-nums">${remainingForFreeDelivery.toFixed(2)}</strong> more for FREE delivery
@@ -198,10 +198,10 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
               )}
               <span className="text-[#5A6270] tabular-nums">$59 min.</span>
             </div>
-            <div className="w-full h-1.5 rounded-full bg-[#D1E3FA] overflow-hidden">
+            <div className="w-full h-1.5 rounded-full bg-[#C2EFE6] overflow-hidden">
               <div
                 className={`h-full rounded-full transition-all duration-300 ${
-                  freeDeliveryUnlocked ? 'bg-[#15803D]' : 'bg-[#1557B0]'
+                  freeDeliveryUnlocked ? 'bg-[#15803D]' : 'bg-[#0F766E]'
                 }`}
                 style={{ width: `${freeDeliveryUnlocked ? 100 : progressPct}%` }}
               />
@@ -216,14 +216,14 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
               <div className="w-16 h-16 rounded-full bg-[#F1F5F9] flex items-center justify-center mb-4 text-[#64748B]">
                 <ShoppingCart className="w-7 h-7" />
               </div>
-              <h3 className="text-base font-bold text-[#1A1D23]">Your FairPrice cart is empty</h3>
+              <h3 className="text-base font-bold text-[#1A1D23]">Your Pantry Lane cart is empty</h3>
               <p className="text-sm text-[#5A6270] mt-1.5 max-w-[260px]">
-                Add fresh produce, chilled dairy, or weekly Must Buy deals to enjoy free delivery from $59.
+                Add fresh produce, chilled dairy, or weekly Top Picks deals to enjoy free delivery from $59.
               </p>
               <button
                 type="button"
                 onClick={onClose}
-                className="mt-5 px-5 py-2.5 rounded-lg bg-[#1557B0] hover:bg-[#0E3578] text-white text-sm font-bold transition-colors"
+                className="mt-5 px-5 py-2.5 rounded-lg bg-[#0F766E] hover:bg-[#134E4A] text-white text-sm font-bold transition-colors"
               >
                 Start Shopping
               </button>
@@ -254,7 +254,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                           type="button"
                           onClick={() => onRemoveItem(product.id)}
                           aria-label={`Remove ${product.name}`}
-                          className="text-[#9CA3AF] hover:text-[#E31837] p-0.5 shrink-0"
+                          className="text-[#9CA3AF] hover:text-[#EA580C] p-0.5 shrink-0"
                         >
                           <Trash2 className="w-4 h-4" />
                         </button>
@@ -292,7 +292,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                             ${itemTotal.toFixed(2)}
                           </div>
                           {savings > 0 && (
-                            <div className="text-[11px] font-semibold text-[#C8102E] tabular-nums">
+                            <div className="text-[11px] font-semibold text-[#C2410C] tabular-nums">
                               Saved ${savings.toFixed(2)}
                             </div>
                           )}
@@ -306,7 +306,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
               {/* Promo Code Section */}
               <div className="pt-3 border-t border-[#E6E8EC]">
                 <label className="text-xs font-bold text-[#1A1D23] flex items-center gap-1.5 mb-2">
-                  <Tag className="w-3.5 h-3.5 text-[#1557B0]" />
+                  <Tag className="w-3.5 h-3.5 text-[#0F766E]" />
                   <span>Promo Code</span>
                 </label>
                 <div className="flex gap-2">
@@ -315,12 +315,12 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                     value={promoInput}
                     onChange={(e) => setPromoInput(e.target.value)}
                     placeholder="Enter WELCOME5, FP10, or FREESHIP"
-                    className="flex-1 h-9 px-3 rounded-lg border border-[#D1D5DB] text-xs uppercase outline-none focus:border-[#1557B0]"
+                    className="flex-1 h-9 px-3 rounded-lg border border-[#D1D5DB] text-xs uppercase outline-none focus:border-[#0F766E]"
                   />
                   <button
                     type="button"
                     onClick={() => handleApplyPromo()}
-                    className="px-3.5 h-9 rounded-lg bg-[#0E3578] hover:bg-[#1557B0] text-white text-xs font-bold transition-colors"
+                    className="px-3.5 h-9 rounded-lg bg-[#134E4A] hover:bg-[#0F766E] text-white text-xs font-bold transition-colors"
                   >
                     Apply
                   </button>
@@ -334,22 +334,22 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                       className={`text-[11px] px-2 py-1 rounded border transition-colors ${
                         appliedPromo === code
                           ? 'border-[#15803D] bg-[#ECFDF3] text-[#15803D] font-bold'
-                          : 'border-[#DCE1E8] bg-[#F8FAFC] text-[#374151] hover:border-[#1557B0]'
+                          : 'border-[#DCE1E8] bg-[#F8FAFC] text-[#374151] hover:border-[#0F766E]'
                       }`}
                     >
                       {code} · {info.label}
                     </button>
                   ))}
                 </div>
-                {promoError && <p className="text-xs text-[#C8102E] mt-1.5">{promoError}</p>}
+                {promoError && <p className="text-xs text-[#C2410C] mt-1.5">{promoError}</p>}
               </div>
 
-              {/* Linkpoints Redemption */}
+              {/* Lane Points Redemption */}
               {maxLinkpointsRedeem > 0 && (
                 <label className="flex items-center justify-between p-3 rounded-lg bg-[#F8FAFC] border border-[#E2E6EC] cursor-pointer">
                   <div>
                     <div className="text-xs font-bold text-[#1A1D23]">
-                      Redeem 500 Linkpoints
+                      Redeem 500 Lane Points
                     </div>
                     <div className="text-[11px] text-[#5A6270]">
                       Offset $5.00 from this order ({linkpoints.toLocaleString()} pts available)
@@ -359,7 +359,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                     type="checkbox"
                     checked={redeemLinkpoints}
                     onChange={(e) => setRedeemLinkpoints(e.target.checked)}
-                    className="w-4 h-4 accent-[#1557B0]"
+                    className="w-4 h-4 accent-[#0F766E]"
                   />
                 </label>
               )}
@@ -391,7 +391,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
               )}
               {linkpointsDiscount > 0 && (
                 <div className="flex justify-between text-[#15803D]">
-                  <span>Linkpoints Redeemed (500 pts)</span>
+                  <span>Lane Points Redeemed (500 pts)</span>
                   <span className="font-semibold tabular-nums">
                     -${linkpointsDiscount.toFixed(2)}
                   </span>
@@ -413,10 +413,10 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
               <div>
                 <div className="text-sm font-bold text-[#1A1D23]">Estimated Total</div>
                 <div className="text-[11px] text-[#5A6270] tabular-nums">
-                  Earn +{linkpointsEarned} Linkpoints on this order
+                  Earn +{linkpointsEarned} Lane Points on this order
                 </div>
               </div>
-              <div className="text-xl font-extrabold text-[#0E3578] tabular-nums">
+              <div className="text-xl font-extrabold text-[#134E4A] tabular-nums">
                 ${total.toFixed(2)}
               </div>
             </div>
@@ -435,7 +435,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                   appliedPromo: promoValid ? appliedPromo : null,
                 })
               }
-              className="w-full h-11 rounded-lg bg-[#1557B0] hover:bg-[#0E3578] text-white text-sm font-bold transition-colors"
+              className="w-full h-11 rounded-lg bg-[#0F766E] hover:bg-[#134E4A] text-white text-sm font-bold transition-colors"
             >
               Proceed to Checkout
             </button>

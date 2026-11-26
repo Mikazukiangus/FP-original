@@ -152,7 +152,7 @@ export default function App() {
   const deliverySummary =
     fulfillmentMode === 'delivery'
       ? `${selectedSlot.dayLabel}, ${selectedSlot.window}`
-      : `Collect: ${selectedOutlet.name.replace('FairPrice ', '')}`;
+      : `Collect: ${selectedOutlet.name.replace('Pantry Lane ', '')}`;
 
   const handleAddToCart = (product: Product) => {
     setCart((prev) => ({ ...prev, [product.id]: (prev[product.id] || 0) + 1 }));
@@ -285,7 +285,7 @@ export default function App() {
         {activePage === 'home' && (
           <div className="max-w-[1280px] mx-auto px-4 lg:px-6 pt-5 space-y-8">
             {/* 1. HERO PROMOTIONAL CAROUSEL */}
-            <section aria-label="Featured Promotions" className="relative rounded-2xl overflow-hidden bg-[#0E3578] shadow-sm">
+            <section aria-label="Featured Promotions" className="relative rounded-2xl overflow-hidden bg-[#134E4A] shadow-sm">
               <div className="relative h-[340px] sm:h-[380px] lg:h-[410px] w-full">
                 <img
                   src={currentSlide.image}
@@ -294,11 +294,11 @@ export default function App() {
                   className="w-full h-full object-cover object-center"
                 />
                 {/* Measured Scrim for Crisp WCAG AA Contrast */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#0A2558]/95 via-[#0E3578]/80 to-[#0E3578]/15" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#042F2E]/95 via-[#134E4A]/80 to-[#134E4A]/15" />
 
                 <div className="absolute inset-0 flex items-center">
                   <div className="px-6 sm:px-10 lg:px-14 max-w-[600px] text-white">
-                    <div className="text-xs sm:text-sm font-bold text-[#93C5FD] tracking-wide">
+                    <div className="text-xs sm:text-sm font-bold text-[#5EEAD4] tracking-wide">
                       {currentSlide.eyebrow}
                     </div>
                     <h1 className="text-2xl sm:text-4xl lg:text-[42px] font-extrabold leading-[1.12] tracking-tight mt-2 text-balance">
@@ -313,7 +313,7 @@ export default function App() {
                         onClick={() =>
                           handleNavigate(currentSlide.targetView, currentSlide.targetCategory ?? null)
                         }
-                        className="px-6 py-3 rounded-lg bg-[#E31837] hover:bg-[#C8102E] text-white text-sm font-bold transition-colors shadow-sm"
+                        className="px-6 py-3 rounded-lg bg-[#EA580C] hover:bg-[#C2410C] text-white text-sm font-bold transition-colors shadow-sm"
                       >
                         {currentSlide.ctaLabel}
                       </button>
@@ -335,7 +335,7 @@ export default function App() {
                     setHeroIndex((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length)
                   }
                   aria-label="Previous promotion"
-                  className="hidden sm:flex absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/90 hover:bg-white text-[#0E3578] items-center justify-center shadow-md transition-colors"
+                  className="hidden sm:flex absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/90 hover:bg-white text-[#134E4A] items-center justify-center shadow-md transition-colors"
                 >
                   <ChevronLeft className="w-5 h-5" />
                 </button>
@@ -343,7 +343,7 @@ export default function App() {
                   type="button"
                   onClick={() => setHeroIndex((prev) => (prev + 1) % HERO_SLIDES.length)}
                   aria-label="Next promotion"
-                  className="hidden sm:flex absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/90 hover:bg-white text-[#0E3578] items-center justify-center shadow-md transition-colors"
+                  className="hidden sm:flex absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/90 hover:bg-white text-[#134E4A] items-center justify-center shadow-md transition-colors"
                 >
                   <ChevronRight className="w-5 h-5" />
                 </button>
@@ -375,14 +375,14 @@ export default function App() {
                       key={cat.id}
                       type="button"
                       onClick={() => handleNavigate('category', cat.id)}
-                      className="group bg-white rounded-xl border border-[#E5E8EE] hover:border-[#1557B0] p-3.5 flex flex-col items-center text-center transition-all hover:shadow-sm"
+                      className="group bg-white rounded-xl border border-[#E5E8EE] hover:border-[#0F766E] p-3.5 flex flex-col items-center text-center transition-all hover:shadow-sm"
                     >
                       <div
                         className={`w-11 h-11 rounded-full ${cat.accentBg} ${cat.accentText} flex items-center justify-center mb-2 group-hover:scale-105 transition-transform`}
                       >
                         <Icon className="w-5 h-5" />
                       </div>
-                      <span className="text-xs font-bold text-[#1A1D23] group-hover:text-[#1557B0] leading-tight">
+                      <span className="text-xs font-bold text-[#1A1D23] group-hover:text-[#0F766E] leading-tight">
                         {cat.shortName}
                       </span>
                     </button>
@@ -392,11 +392,11 @@ export default function App() {
             </section>
 
             {/* 3. MUST BUY THIS WEEK SECTION */}
-            <section aria-label="Must Buy This Week">
+            <section aria-label="Top Picks This Week">
               <div className="flex items-end justify-between gap-4 mb-4">
                 <div>
                   <h2 className="text-xl sm:text-2xl font-extrabold text-[#1A1D23] tracking-tight">
-                    Must Buy This Week
+                    Top Picks This Week
                   </h2>
                   <p className="text-xs sm:text-sm text-[#5A6270] mt-0.5">
                     Weekly Thursday – Wednesday price drops and bundle offers across Singapore favourites
@@ -405,7 +405,7 @@ export default function App() {
                 <button
                   type="button"
                   onClick={() => handleNavigate('must-buy', null)}
-                  className="text-xs sm:text-sm font-bold text-[#1557B0] hover:underline whitespace-nowrap shrink-0 flex items-center gap-0.5"
+                  className="text-xs sm:text-sm font-bold text-[#0F766E] hover:underline whitespace-nowrap shrink-0 flex items-center gap-0.5"
                 >
                   <span>View all</span>
                   <ChevronRight className="w-4 h-4" />
@@ -432,43 +432,43 @@ export default function App() {
             <section aria-label="Member Benefits" className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="bg-white rounded-2xl border border-[#E5E8EE] p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div className="space-y-1.5">
-                  <div className="text-xs font-bold text-[#E31837] flex items-center gap-1.5">
+                  <div className="text-xs font-bold text-[#EA580C] flex items-center gap-1.5">
                     <Award className="w-4 h-4" />
-                    <span>Link Rewards &amp; Trust Card</span>
+                    <span>Lane Rewards &amp; Lane Card</span>
                   </div>
                   <h3 className="text-lg font-extrabold text-[#1A1D23]">
-                    Earn &amp; Offset Linkpoints on Every Cart
+                    Earn &amp; Offset Lane Points on Every Cart
                   </h3>
                   <p className="text-xs text-[#5A6270] leading-relaxed max-w-sm">
-                    Use promo code <strong className="text-[#1A1D23]">WELCOME5</strong> for $5 off orders $30+ or redeem 500 Linkpoints directly at checkout.
+                    Use promo code <strong className="text-[#1A1D23]">WELCOME5</strong> for $5 off orders $30+ or redeem 500 Lane Points directly at checkout.
                   </p>
                 </div>
                 <button
                   type="button"
                   onClick={() => setAccountModalOpen(true)}
-                  className="px-4 py-2.5 rounded-lg bg-[#EFF6FF] hover:bg-[#1557B0] text-[#1557B0] hover:text-white text-xs font-bold transition-colors whitespace-nowrap shrink-0"
+                  className="px-4 py-2.5 rounded-lg bg-[#F0FDFA] hover:bg-[#0F766E] text-[#0F766E] hover:text-white text-xs font-bold transition-colors whitespace-nowrap shrink-0"
                 >
-                  View Linkpoints
+                  View Lane Points
                 </button>
               </div>
 
-              <div className="bg-[#0E3578] text-white rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="bg-[#134E4A] text-white rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div className="space-y-1.5">
-                  <div className="text-xs font-bold text-[#93C5FD] flex items-center gap-1.5">
+                  <div className="text-xs font-bold text-[#5EEAD4] flex items-center gap-1.5">
                     <Truck className="w-4 h-4" />
-                    <span>FairPrice Digital Club</span>
+                    <span>Pantry Lane Lane Plus</span>
                   </div>
                   <h3 className="text-lg font-extrabold">
                     Enjoy $0 Delivery Fees All Month Long
                   </h3>
                   <p className="text-xs text-white/80 leading-relaxed max-w-sm">
-                    Get unlimited free delivery with zero minimum spend, 2x bonus Linkpoints, and exclusive member vouchers.
+                    Get unlimited free delivery with zero minimum spend, 2x bonus Lane Points, and exclusive member vouchers.
                   </p>
                 </div>
                 <button
                   type="button"
                   onClick={() => handleNavigate('digital-club', null)}
-                  className="px-4 py-2.5 rounded-lg bg-white text-[#0E3578] hover:bg-[#EFF6FF] text-xs font-bold transition-colors whitespace-nowrap shrink-0"
+                  className="px-4 py-2.5 rounded-lg bg-white text-[#134E4A] hover:bg-[#F0FDFA] text-xs font-bold transition-colors whitespace-nowrap shrink-0"
                 >
                   {isDigitalClub ? 'Manage Club' : 'Try 30 Days Free'}
                 </button>
@@ -499,8 +499,8 @@ export default function App() {
                       onClick={() => setFreshTab(tab.id as typeof freshTab)}
                       className={`px-3 py-1.5 rounded-md text-xs font-bold transition-colors whitespace-nowrap shrink-0 ${
                         freshTab === tab.id
-                          ? 'bg-[#1557B0] text-white'
-                          : 'text-[#4B5563] hover:text-[#1557B0]'
+                          ? 'bg-[#0F766E] text-white'
+                          : 'text-[#4B5563] hover:text-[#0F766E]'
                       }`}
                     >
                       {tab.label}
@@ -549,8 +549,8 @@ export default function App() {
                       onClick={() => setPantryTab(tab.id as typeof pantryTab)}
                       className={`px-3 py-1.5 rounded-md text-xs font-bold transition-colors whitespace-nowrap shrink-0 ${
                         pantryTab === tab.id
-                          ? 'bg-[#1557B0] text-white'
-                          : 'text-[#4B5563] hover:text-[#1557B0]'
+                          ? 'bg-[#0F766E] text-white'
+                          : 'text-[#4B5563] hover:text-[#0F766E]'
                       }`}
                     >
                       {tab.label}
@@ -624,8 +624,8 @@ export default function App() {
               setIsDigitalClub((prev) => {
                 showToast(
                   prev
-                    ? 'Digital Club trial paused'
-                    : 'Digital Club activated — $0 delivery enabled!'
+                    ? 'Lane Plus trial paused'
+                    : 'Lane Plus activated — $0 delivery enabled!'
                 );
                 return !prev;
               });
@@ -721,7 +721,7 @@ export default function App() {
         }}
       />
 
-      {/* Account & Linkpoints Modal */}
+      {/* Account & Lane Points Modal */}
       <AccountModal
         open={accountModalOpen}
         onClose={() => setAccountModalOpen(false)}
@@ -731,7 +731,7 @@ export default function App() {
         isDigitalClub={isDigitalClub}
         onToggleDigitalClub={() => {
           setIsDigitalClub((prev) => {
-            showToast(prev ? 'Digital Club paused' : 'Digital Club 30-day free trial activated!');
+            showToast(prev ? 'Lane Plus paused' : 'Lane Plus 30-day free trial activated!');
             return !prev;
           });
         }}
@@ -743,7 +743,7 @@ export default function App() {
         <div
           role="status"
           aria-live="polite"
-          className="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 px-4 py-2.5 rounded-lg bg-[#0E3578] text-white text-xs font-bold shadow-xl flex items-center gap-2 whitespace-nowrap"
+          className="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 px-4 py-2.5 rounded-lg bg-[#134E4A] text-white text-xs font-bold shadow-xl flex items-center gap-2 whitespace-nowrap"
         >
           <span>{toastMessage}</span>
         </div>
