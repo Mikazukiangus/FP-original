@@ -1,0 +1,6 @@
+{
+  "name": "FairPrice Online Singapore",
+  "description": "Shop groceries online at FairPrice Singapore. Enjoy fresh produce, pantry essentials, weekly promotions, Must Buy deals, Linkpoints rewards, and free delivery for orders $59 and above.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
